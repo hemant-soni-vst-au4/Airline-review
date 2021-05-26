@@ -31,3 +31,5 @@ Airline.create([
       image_url: "https://open-flights.s3.amazonaws.com/American-Airlines.png" 
     }
   ])
+
+  
