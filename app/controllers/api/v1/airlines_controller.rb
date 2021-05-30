@@ -23,6 +23,16 @@ module Api
               end
             end
 
+            def update
+                airline = Airline.find_by(slug: params[:slug])
+  
+                if airline.update
+                  render json: AirlineSerializer.new(airline).serialized_json
+                else
+                  render json: { error: airline.errors.messages }, status: 422
+                end
+            end
+
             def airline_params
                 params.require(:airline).permit(:name, :image_url)
             end
